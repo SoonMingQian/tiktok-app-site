@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — ShipFaster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #070707;
+      --bg2:       #0f0f0f;
+      --green:     #00e54c;
+      --green-dim: #009933;
+      --white:     #e4e4e4;
+      --gray:      #888;
+      --gray-dim:  #444;
+      --border:    #1e1e1e;
+      --mono:      'IBM Plex Mono', 'Courier New', monospace;
+      --sans:      'IBM Plex Sans', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(7,7,7,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--mono); font-weight: 600; font-size: 1.05rem;
+      color: var(--green); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-logo::before { content: '> '; color: var(--green-dim); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.78rem; color: var(--gray-dim);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 3rem 8rem;
+    }
+
+    .page-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-dim);
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: var(--mono);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .page-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--gray-dim);
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Legal content ── */
+    .legal h2 {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal h2::before { content: '// '; color: var(--green-dim); }
+
+    .legal p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.85;
+    }
+
+    .legal ul {
+      margin: 0.8rem 0 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .legal ul li {
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+
+    .legal ul li::marker { color: var(--green-dim); }
+
+    .legal a {
+      color: var(--green);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+    }
+
+    .legal a:hover { text-decoration: underline; }
+
+    .legal .highlight {
+      background: var(--bg2);
+      border-left: 2px solid var(--green-dim);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: var(--mono); font-size: 0.85rem; color: var(--green-dim); }
+    .footer-logo::before { content: '> '; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-family: var(--mono); font-size: 0.72rem; color: var(--gray-dim);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy {
+      font-size: 0.75rem; color: var(--gray-dim); width: 100%;
+      text-align: right; font-family: var(--mono);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .page { padding: 3rem 1.5rem 5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .footer-copy { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">shipfaster</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html" class="active">Terms</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <p class="page-label">// legal</p>
+    <h1 class="page-title">Terms of Service</h1>
+    <p class="page-meta">Last updated: April 15, 2026 &nbsp;·&nbsp; Effective immediately</p>
+
+    <div class="legal">
+
+      <p>
+        Please read these Terms of Service ("Terms") carefully before using ShipFaster
+        ("the Service"). By accessing or using ShipFaster, you agree to be bound by
+        these Terms.
+      </p>
+
+      <div class="highlight">
+        ShipFaster is a personal content scheduling tool. It is not a commercial SaaS
+        product. Use of this tool is subject to the terms of the third-party platforms
+        it connects to.
+      </div>
+
+      <h2>Acceptance of Terms</h2>
+      <p>
+        By using ShipFaster, you confirm that you are at least 13 years of age and
+        agree to comply with these Terms. If you do not agree, you must not use the
+        Service.
+      </p>
+
+      <h2>Description of Service</h2>
+      <p>
+        ShipFaster is an AI-powered content creation and scheduling pipeline that
+        allows users to:
+      </p>
+      <ul>
+        <li>Generate video scripts and scenes using AI tools</li>
+        <li>Render short-form videos using React/Remotion components</li>
+        <li>Schedule and publish videos to connected social media platforms including YouTube, TikTok, and Instagram</li>
+        <li>Manage OAuth connections to third-party platforms on the user's behalf</li>
+      </ul>
+
+      <h2>User Responsibilities</h2>
+      <p>By using ShipFaster, you agree to:</p>
+      <ul>
+        <li>Only post content you own or have the rights to distribute</li>
+        <li>Comply with the terms of service and community guidelines of each platform you connect (YouTube, TikTok, Instagram, etc.)</li>
+        <li>Not use the Service to upload spam, misleading content, or content that violates applicable laws</li>
+        <li>Keep your API credentials, OAuth tokens, and environment files secure</li>
+        <li>Not use the Service to infringe on the intellectual property rights of others</li>
+      </ul>
+
+      <h2>Third-Party Platform Compliance</h2>
+      <p>
+        ShipFaster interfaces with third-party APIs and platforms. Your use of those
+        platforms through ShipFaster is governed by their respective terms of service.
+        You are solely responsible for ensuring your content and publishing activity
+        complies with:
+      </p>
+      <ul>
+        <li>YouTube Terms of Service — <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">youtube.com/t/terms</a></li>
+        <li>TikTok Terms of Service — <a href="https://www.tiktok.com/legal/page/us/terms-of-service/en" target="_blank" rel="noopener">tiktok.com/legal/terms-of-service</a></li>
+        <li>Instagram Terms of Use — <a href="https://help.instagram.com/581066165581870" target="_blank" rel="noopener">help.instagram.com/terms</a></li>
+      </ul>
+
+      <h2>Intellectual Property</h2>
+      <p>
+        All content you create and publish through ShipFaster remains your property.
+        ShipFaster does not claim any ownership over content you generate or distribute
+        using the tool.
+      </p>
+      <p>
+        The ShipFaster software, design, and documentation are owned by the developer
+        and may not be redistributed or resold without permission.
+      </p>
+
+      <h2>Disclaimer of Warranties</h2>
+      <p>
+        ShipFaster is provided "as is" and "as available" without warranties of any
+        kind, either express or implied. We do not guarantee that the Service will be
+        uninterrupted, error-free, or that uploads to third-party platforms will
+        succeed at all times.
+      </p>
+      <p>
+        Third-party APIs (YouTube, TikTok, Instagram) may change, deprecate, or
+        revoke access at any time. ShipFaster is not responsible for service
+        disruptions caused by changes to external APIs.
+      </p>
+
+      <h2>Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by law, ShipFaster and its developer shall
+        not be liable for any indirect, incidental, special, consequential, or
+        punitive damages arising from your use of the Service, including but not
+        limited to loss of data, revenue, or content.
+      </p>
+
+      <h2>Termination</h2>
+      <p>
+        You may stop using ShipFaster at any time. You can revoke the Service's
+        access to your social accounts through each platform's security settings.
+        We reserve the right to discontinue the Service at any time without notice.
+      </p>
+
+      <h2>Changes to These Terms</h2>
+      <p>
+        We may update these Terms from time to time. Continued use of ShipFaster
+        after changes are posted constitutes your acceptance of the revised Terms.
+        The "last updated" date at the top of this page will reflect any changes.
+      </p>
+
+      <h2>Governing Law</h2>
+      <p>
+        These Terms are governed by the laws of Malaysia, without regard to its
+        conflict of law provisions.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        For any questions about these Terms of Service, please contact:
+        <br /><br />
+        <a href="mailto:qianbot02@gmail.com">qianbot02@gmail.com</a>
+      </p>
+
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">shipfaster</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 ShipFaster. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

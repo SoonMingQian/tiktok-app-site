@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ShipFaster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #070707;
+      --bg2:       #0f0f0f;
+      --green:     #00e54c;
+      --green-dim: #009933;
+      --white:     #e4e4e4;
+      --gray:      #888;
+      --gray-dim:  #444;
+      --border:    #1e1e1e;
+      --mono:      'IBM Plex Mono', 'Courier New', monospace;
+      --sans:      'IBM Plex Sans', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 3rem;
+      background: rgba(7,7,7,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--mono); font-weight: 600; font-size: 1.05rem;
+      color: var(--green); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-logo::before { content: '> '; color: var(--green-dim); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.78rem; color: var(--gray-dim);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 3rem 8rem;
+    }
+
+    .page-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-dim);
+      margin-bottom: 1rem;
+    }
+
+    .page-title {
+      font-family: var(--mono);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .page-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--gray-dim);
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Legal content ── */
+    .legal h2 {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal h2::before { content: '// '; color: var(--green-dim); }
+
+    .legal p {
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.85;
+    }
+
+    .legal ul {
+      margin: 0.8rem 0 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    .legal ul li {
+      font-size: 0.92rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+      line-height: 1.75;
+    }
+
+    .legal ul li::marker { color: var(--green-dim); }
+
+    .legal a {
+      color: var(--green);
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+    }
+
+    .legal a:hover { text-decoration: underline; }
+
+    .legal .highlight {
+      background: var(--bg2);
+      border-left: 2px solid var(--green-dim);
+      padding: 1rem 1.2rem;
+      margin: 1.5rem 0;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: var(--mono); font-size: 0.85rem; color: var(--green-dim); }
+    .footer-logo::before { content: '> '; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-family: var(--mono); font-size: 0.72rem; color: var(--gray-dim);
+      text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy {
+      font-size: 0.75rem; color: var(--gray-dim); width: 100%;
+      text-align: right; font-family: var(--mono);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .page { padding: 3rem 1.5rem 5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      .footer-copy { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">shipfaster</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html" class="active">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+    <p class="page-label">// legal</p>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-meta">Last updated: April 15, 2026 &nbsp;·&nbsp; Effective immediately</p>
+
+    <div class="legal">
+
+      <p>
+        ShipFaster ("we", "us", or "our") operates as a personal content scheduling
+        and automation tool. This Privacy Policy describes how we collect, use, and
+        protect information when you use ShipFaster to connect your social media
+        accounts and schedule content.
+      </p>
+
+      <div class="highlight">
+        ShipFaster is a personal-use tool. We do not sell, rent, or share your
+        personal data with third parties for commercial purposes.
+      </div>
+
+      <h2>Information We Collect</h2>
+      <p>When you connect a social media account to ShipFaster, we collect and store:</p>
+      <ul>
+        <li><strong>OAuth access tokens and refresh tokens</strong> — used to post content on your behalf to connected platforms (YouTube, TikTok, Instagram, etc.)</li>
+        <li><strong>Platform user IDs and account identifiers</strong> — to associate tokens with the correct account</li>
+        <li><strong>Video metadata</strong> — titles, descriptions, tags, and scheduled publish times that you provide when creating content</li>
+        <li><strong>Upload history and logs</strong> — records of what was published, when, and to which platform</li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use the information collected solely to operate ShipFaster's core functionality:</p>
+      <ul>
+        <li>Authenticating your connected social media accounts via OAuth 2.0</li>
+        <li>Uploading videos and metadata to platforms on your behalf at scheduled times</li>
+        <li>Refreshing expired access tokens automatically using stored refresh tokens</li>
+        <li>Logging upload history for your own reference and debugging purposes</li>
+      </ul>
+      <p>We do not use your information for advertising, analytics, or any purpose beyond operating the tool for your personal use.</p>
+
+      <h2>Token Storage &amp; Security</h2>
+      <p>
+        OAuth tokens are stored locally in environment files (e.g. <code style="font-family:var(--mono);font-size:0.82em;color:var(--green)">.env</code>)
+        on your own machine or server. ShipFaster does not transmit your tokens to any
+        third-party server other than the platforms you have explicitly authorised
+        (YouTube, TikTok, Instagram, etc.).
+      </p>
+      <p>You are responsible for securing the environment in which ShipFaster runs.</p>
+
+      <h2>Third-Party Platforms</h2>
+      <p>
+        ShipFaster connects to the following third-party platforms via their official APIs.
+        Your use of these platforms is governed by their respective privacy policies:
+      </p>
+      <ul>
+        <li>YouTube / Google — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+        <li>TikTok — <a href="https://www.tiktok.com/legal/page/us/privacy-policy/en" target="_blank" rel="noopener">tiktok.com/legal/privacy-policy</a></li>
+        <li>Instagram / Meta — <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">privacycenter.instagram.com/policy</a></li>
+        <li>ElevenLabs — <a href="https://elevenlabs.io/privacy" target="_blank" rel="noopener">elevenlabs.io/privacy</a></li>
+      </ul>
+
+      <h2>Data Retention</h2>
+      <p>
+        ShipFaster retains your tokens and upload logs only as long as they are needed
+        to operate the tool. You can revoke access at any time by:
+      </p>
+      <ul>
+        <li>Disconnecting the app from your platform's security settings (e.g. Google account permissions, TikTok app management)</li>
+        <li>Deleting the <code style="font-family:var(--mono);font-size:0.82em;color:var(--green)">.env</code> file containing your stored tokens</li>
+      </ul>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        ShipFaster is not directed at children under the age of 13. We do not knowingly
+        collect any personal information from children.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Any changes will be
+        reflected on this page with an updated effective date. Continued use of
+        ShipFaster after changes constitutes acceptance of the revised policy.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have any questions about this Privacy Policy or how your data is handled,
+        please contact us at:
+        <br /><br />
+        <a href="mailto:qianbot02@gmail.com">qianbot02@gmail.com</a>
+      </p>
+
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-logo">shipfaster</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 ShipFaster. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
