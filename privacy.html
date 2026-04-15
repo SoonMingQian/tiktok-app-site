@@ -14,168 +14,130 @@
       --bg:        #070707;
       --bg2:       #0f0f0f;
       --green:     #00e54c;
-      --green-dim: #009933;
-      --white:     #e4e4e4;
-      --gray:      #888;
-      --gray-dim:  #444;
-      --border:    #1e1e1e;
+      --green-dim: #00aa38;
+      --white:     #ececec;
+      --muted:     #aaaaaa;
+      --faint:     #555555;
+      --border:    #202020;
       --mono:      'IBM Plex Mono', 'Courier New', monospace;
       --sans:      'IBM Plex Sans', system-ui, sans-serif;
     }
 
     body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.8;
-      min-height: 100vh;
-      overflow-x: hidden;
+      background: var(--bg); color: var(--white);
+      font-family: var(--sans); font-weight: 300;
+      line-height: 1.8; min-height: 100vh; overflow-x: hidden;
     }
 
     body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
+      content: ''; position: fixed; inset: 0;
       background: repeating-linear-gradient(
         0deg, transparent, transparent 2px,
-        rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px
+        rgba(0,0,0,0.05) 2px, rgba(0,0,0,0.05) 4px
       );
-      pointer-events: none;
-      z-index: 9999;
+      pointer-events: none; z-index: 9999;
     }
 
     /* ── Nav ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 3rem;
-      background: rgba(7,7,7,0.92);
-      backdrop-filter: blur(12px);
+      padding: 1.2rem 3rem;
+      background: rgba(7,7,7,0.93); backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-family: var(--mono); font-weight: 600; font-size: 1.05rem;
+      font-family: var(--mono); font-weight: 600; font-size: 1.1rem;
       color: var(--green); text-decoration: none; letter-spacing: -0.02em;
     }
     .nav-logo::before { content: '> '; color: var(--green-dim); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      font-family: var(--mono); font-size: 0.78rem; color: var(--gray-dim);
+      font-family: var(--mono); font-size: 0.82rem; color: var(--faint);
       text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
       transition: color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--green); }
 
-    /* ── Page wrapper ── */
-    .page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 5rem 3rem 8rem;
-    }
+    /* ── Page ── */
+    .page { max-width: 760px; margin: 0 auto; padding: 5rem 3rem 8rem; }
 
-    .page-label {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--green-dim);
-      margin-bottom: 1rem;
+    .page-eyebrow {
+      font-family: var(--mono); font-size: 0.78rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green-dim); margin-bottom: 1rem;
     }
 
     .page-title {
       font-family: var(--mono);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: -0.03em;
-      margin-bottom: 0.6rem;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 600; color: var(--white);
+      letter-spacing: -0.03em; margin-bottom: 0.6rem;
     }
 
     .page-meta {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--gray-dim);
-      margin-bottom: 3.5rem;
-      padding-bottom: 3rem;
+      font-family: var(--mono); font-size: 0.8rem; color: var(--faint);
+      margin-bottom: 3.5rem; padding-bottom: 3rem;
       border-bottom: 1px solid var(--border);
     }
 
-    /* ── Legal content ── */
+    /* ── Legal body ── */
     .legal h2 {
-      font-family: var(--mono);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--green);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-top: 2.8rem;
-      margin-bottom: 1rem;
+      font-family: var(--mono); font-size: 0.92rem; font-weight: 600;
+      color: var(--green); letter-spacing: 0.05em; text-transform: uppercase;
+      margin-top: 3rem; margin-bottom: 1rem;
     }
-
     .legal h2::before { content: '// '; color: var(--green-dim); }
 
     .legal p {
-      font-size: 0.92rem;
-      color: var(--gray);
-      margin-bottom: 1rem;
-      line-height: 1.85;
+      font-size: 1rem; color: var(--muted);
+      margin-bottom: 1.1rem; line-height: 1.85;
     }
 
-    .legal ul {
-      margin: 0.8rem 0 1rem 0;
-      padding-left: 1.5rem;
-    }
-
+    .legal ul { margin: 0.8rem 0 1.2rem 0; padding-left: 1.6rem; }
     .legal ul li {
-      font-size: 0.92rem;
-      color: var(--gray);
-      margin-bottom: 0.5rem;
-      line-height: 1.75;
+      font-size: 1rem; color: var(--muted);
+      margin-bottom: 0.6rem; line-height: 1.8;
     }
-
     .legal ul li::marker { color: var(--green-dim); }
 
-    .legal a {
-      color: var(--green);
-      text-decoration: none;
-      font-family: var(--mono);
-      font-size: 0.85rem;
-    }
+    .legal strong { color: var(--white); font-weight: 500; }
 
+    .legal a {
+      color: var(--green); text-decoration: none;
+      font-family: var(--mono); font-size: 0.9rem;
+    }
     .legal a:hover { text-decoration: underline; }
 
-    .legal .highlight {
-      background: var(--bg2);
-      border-left: 2px solid var(--green-dim);
-      padding: 1rem 1.2rem;
-      margin: 1.5rem 0;
-      font-family: var(--mono);
-      font-size: 0.82rem;
-      color: var(--gray);
-      line-height: 1.7;
+    .highlight {
+      background: var(--bg2); border-left: 2px solid var(--green-dim);
+      padding: 1.1rem 1.4rem; margin: 1.8rem 0;
+      font-family: var(--mono); font-size: 0.9rem;
+      color: var(--muted); line-height: 1.75;
+    }
+
+    code {
+      font-family: var(--mono); font-size: 0.88rem;
+      color: var(--green); background: var(--bg2);
+      padding: 0.1em 0.4em;
     }
 
     /* ── Footer ── */
     footer {
-      padding: 2.5rem 3rem;
-      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem; border-top: 1px solid var(--border);
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 1rem;
     }
-    .footer-logo { font-family: var(--mono); font-size: 0.85rem; color: var(--green-dim); }
+    .footer-logo { font-family: var(--mono); font-size: 0.9rem; color: var(--green-dim); }
     .footer-logo::before { content: '> '; }
     .footer-links { display: flex; gap: 2rem; list-style: none; }
     .footer-links a {
-      font-family: var(--mono); font-size: 0.72rem; color: var(--gray-dim);
+      font-family: var(--mono); font-size: 0.8rem; color: var(--faint);
       text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
       transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--green); }
-    .footer-copy {
-      font-size: 0.75rem; color: var(--gray-dim); width: 100%;
-      text-align: right; font-family: var(--mono);
-    }
+    .footer-copy { font-size: 0.82rem; color: var(--faint); width: 100%; text-align: right; font-family: var(--mono); }
 
     @media (max-width: 640px) {
       nav { padding: 1rem 1.5rem; }
@@ -197,56 +159,61 @@
   </nav>
 
   <div class="page">
-    <p class="page-label">// legal</p>
+    <p class="page-eyebrow">// legal</p>
     <h1 class="page-title">Privacy Policy</h1>
     <p class="page-meta">Last updated: April 15, 2026 &nbsp;·&nbsp; Effective immediately</p>
 
     <div class="legal">
 
       <p>
-        ShipFaster ("we", "us", or "our") operates as a personal content scheduling
-        and automation tool. This Privacy Policy describes how we collect, use, and
-        protect information when you use ShipFaster to connect your social media
-        accounts and schedule content.
+        ShipFaster ("we", "us", or "our") is a personal content creation and scheduling
+        tool. This Privacy Policy explains how we collect, use, and protect your
+        information when you connect your social media accounts and use ShipFaster
+        to schedule and publish content.
       </p>
 
       <div class="highlight">
         ShipFaster is a personal-use tool. We do not sell, rent, or share your
-        personal data with third parties for commercial purposes.
+        personal data with any third party for commercial purposes.
       </div>
 
       <h2>Information We Collect</h2>
       <p>When you connect a social media account to ShipFaster, we collect and store:</p>
       <ul>
-        <li><strong>OAuth access tokens and refresh tokens</strong> — used to post content on your behalf to connected platforms (YouTube, TikTok, Instagram, etc.)</li>
+        <li><strong>OAuth access tokens and refresh tokens</strong> — used to post content to connected platforms (YouTube, TikTok, Instagram, etc.) on your behalf</li>
         <li><strong>Platform user IDs and account identifiers</strong> — to associate tokens with the correct account</li>
-        <li><strong>Video metadata</strong> — titles, descriptions, tags, and scheduled publish times that you provide when creating content</li>
-        <li><strong>Upload history and logs</strong> — records of what was published, when, and to which platform</li>
+        <li><strong>Video metadata</strong> — titles, descriptions, tags, and scheduled publish times you provide when creating content</li>
+        <li><strong>Upload history and logs</strong> — records of what was published, when, and to which platform, for your own reference</li>
       </ul>
 
       <h2>How We Use Your Information</h2>
-      <p>We use the information collected solely to operate ShipFaster's core functionality:</p>
+      <p>We use the collected information solely to operate ShipFaster's core functionality:</p>
       <ul>
         <li>Authenticating your connected social media accounts via OAuth 2.0</li>
         <li>Uploading videos and metadata to platforms on your behalf at scheduled times</li>
-        <li>Refreshing expired access tokens automatically using stored refresh tokens</li>
-        <li>Logging upload history for your own reference and debugging purposes</li>
+        <li>Automatically refreshing expired access tokens using stored refresh tokens</li>
+        <li>Maintaining upload logs for debugging and your own records</li>
       </ul>
-      <p>We do not use your information for advertising, analytics, or any purpose beyond operating the tool for your personal use.</p>
+      <p>
+        We do not use your information for advertising, profiling, analytics sold
+        to third parties, or any purpose other than operating the tool for your personal use.
+      </p>
 
       <h2>Token Storage &amp; Security</h2>
       <p>
-        OAuth tokens are stored locally in environment files (e.g. <code style="font-family:var(--mono);font-size:0.82em;color:var(--green)">.env</code>)
+        OAuth tokens are stored locally in environment files (e.g. <code>.env</code>)
         on your own machine or server. ShipFaster does not transmit your tokens to any
         third-party server other than the platforms you have explicitly authorised
         (YouTube, TikTok, Instagram, etc.).
       </p>
-      <p>You are responsible for securing the environment in which ShipFaster runs.</p>
+      <p>
+        You are responsible for the security of the device and environment in which ShipFaster runs.
+      </p>
 
       <h2>Third-Party Platforms</h2>
       <p>
         ShipFaster connects to the following third-party platforms via their official APIs.
-        Your use of these platforms is governed by their respective privacy policies:
+        Your use of these platforms is also governed by their own privacy policies:
       </p>
       <ul>
         <li>YouTube / Google — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
@@ -257,32 +224,49 @@
 
       <h2>Data Retention</h2>
       <p>
-        ShipFaster retains your tokens and upload logs only as long as they are needed
-        to operate the tool. You can revoke access at any time by:
+        ShipFaster retains your tokens and upload logs only as long as they are
+        needed to operate the tool. You can revoke access at any time by:
       </p>
       <ul>
-        <li>Disconnecting the app from your platform's security settings (e.g. Google account permissions, TikTok app management)</li>
-        <li>Deleting the <code style="font-family:var(--mono);font-size:0.82em;color:var(--green)">.env</code> file containing your stored tokens</li>
+        <li>Disconnecting ShipFaster from your platform's security or app settings (e.g. Google account permissions, TikTok connected apps)</li>
+        <li>Deleting the <code>.env</code> file and any stored token files on your machine</li>
       </ul>
+
+      <h2>GDPR — Your Rights (EU/EEA Users)</h2>
+      <p>
+        If you are located in the European Union or European Economic Area, you have
+        the following rights under the General Data Protection Regulation (GDPR):
+      </p>
+      <ul>
+        <li><strong>Right of access</strong> — you can request a copy of the data we hold about you</li>
+        <li><strong>Right to erasure</strong> — you can request deletion of your data at any time</li>
+        <li><strong>Right to rectification</strong> — you can ask us to correct inaccurate data</li>
+        <li><strong>Right to restriction</strong> — you can ask us to limit how we process your data</li>
+        <li><strong>Right to data portability</strong> — you can request your data in a portable format</li>
+      </ul>
+      <p>
+        To exercise any of these rights, contact us at
+        <a href="mailto:qianbot02@gmail.com">qianbot02@gmail.com</a>.
+        We will respond within 30 days. ShipFaster is operated from Ireland and
+        processes data in accordance with GDPR requirements.
+      </p>
 
       <h2>Children's Privacy</h2>
       <p>
-        ShipFaster is not directed at children under the age of 13. We do not knowingly
-        collect any personal information from children.
+        ShipFaster is not directed at children under the age of 13.
+        We do not knowingly collect personal information from children.
       </p>
 
       <h2>Changes to This Policy</h2>
       <p>
-        We may update this Privacy Policy from time to time. Any changes will be
-        reflected on this page with an updated effective date. Continued use of
-        ShipFaster after changes constitutes acceptance of the revised policy.
+        We may update this Privacy Policy from time to time. Changes will be reflected
+        on this page with an updated effective date. Continued use of ShipFaster after
+        changes are posted constitutes acceptance of the revised policy.
       </p>
 
       <h2>Contact</h2>
       <p>
-        If you have any questions about this Privacy Policy or how your data is handled,
-        please contact us at:
-        <br /><br />
+        For any questions about this Privacy Policy or how your data is handled, contact us at:<br /><br />
         <a href="mailto:qianbot02@gmail.com">qianbot02@gmail.com</a>
       </p>
 
